@@ -1,83 +1,99 @@
 
-# PalmCare
+# Boad Project
 
-![GitHub repo size](https://img.shields.io/github/repo-size/hsndev18/PalmCare)
-![GitHub contributors](https://img.shields.io/github/contributors/hsndev18/PalmCare)
-![GitHub stars](https://img.shields.io/github/stars/hsndev18/PalmCare?style=social)
-![GitHub forks](https://img.shields.io/github/forks/hsndev18/PalmCare?style=social)
-![GitHub issues](https://img.shields.io/github/issues/hsndev18/PalmCare)
+![GitHub repo size](https://img.shields.io/github/repo-size/hsndev18/boad-web)
+![GitHub contributors](https://img.shields.io/github/contributors/hsndev18/boad-web)
+![GitHub stars](https://img.shields.io/github/stars/hsndev18/boad-web?style=social)
+![GitHub forks](https://img.shields.io/github/forks/hsndev18/boad-web?style=social)
+![GitHub issues](https://img.shields.io/github/issues/hsndev18/boad-web)
 
 
-Welcome to the GitHub repository of **PalmCare**, crafted by the **Falcons** team for the **MADINAH DATES** hackathon.
+Welcome to the GitHub repository of **BOAD TEAM**, crafted for the **ROSHEN** hackathon.
 
 ## Installation
 
-PalmCare consists of two main components: the app (built with Laravel) and the API Of Model AI (powered by Python Flask). Below are the steps to set up the API.
+SANA is built with two primary components:
 
+1. Flask (Python) - A RESTful API that processes data with OpenAI and interacts with the front-end. (Back-end)
+2. Web Application (Laravel) - A web application that interacts with the API. (Front-end)
+
+Follow these steps to set up the API:
 ### Prerequisites
 
 Ensure you have Python installed on your machine. The project uses various Python packages, which can be installed via pip:
 
+
 ```bash
-conda create -n palmcare python=3.8 
-conda activate palmcare
-pip install openai  
-conda install pandas numpy scikit-learn
-cd Plant-Disease-Detection-main
+git clone https://github.com/hsndev18/boad-api.git
+```
+    
+```bash
+conda create -n boad python=3.8
+```
+
+```bash
+conda activate boad
+```
+
+```bash
 pip install -r requirements.txt
-cd ..
-pip install python-dotenv
-pip install tensorflow-macos==2.13.0 tensorflow==2.13.0
 ```
 
 ### Setting Up
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/hsndev18/PalmCare.git
+    git clone https://github.com/hsndev18/boad-api.git
     ```
-2. Navigate to the API directory:
-    ```bash
-    cd PalmCare
-    ```
-3. Set up the API environment(Add openai api key in .env file):
+2. Set up the API environment(Add openai api key in .env file):
     ```bash
     OPENAI_API_KEY=############
     ```
+3. Run the server:
+    ```bash
+    python API.py
+    ```
+4.  You should install the Laravel project to interact with the API.
+5.  Clone the repository:
+    ```bash
+    git clone https://github.com/hsndev18/boad-web
+    ```
 4. Set up the WepAPP Laravel environment:
     ```bash
-    cd WebAPP
+    cd boad-web
     composer install
     ```
 5. copy .env.example > .env
-6. change database connection to your own connection
+6. change database connection to your own connection with mysql
+   ```php
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=YOUR_DATABASE_NAME
+    DB_USERNAME=YOUR_DATABASE_USERNAME
+    DB_PASSWORD=YOUR_DATABASE_PASSWORD
+    ```
 7. run migration
     ```php
-    php artisan migrate
+    php artisan migrate --seed
     ```
 8. Run web app
    ```php
    php artisan serve
    php artisan horizon
    ```
-9. Go back to main directory and run api.py
-    ```bash
-    cd ..
-    python API.py
-    ```
-10. Open web app and upload image 
-    
+9. Now you can access the web app from your browser.
+10. Enjoy!
 ## Usage
 
-Once the server is running, you can access the API endpoints from your Laravel application to interact with the data processed by the Flask backend.
+Once the server is running, you can access the API endpoints from your Laravel application to interact with the allam and preprocess the data before sending it to the openai.
 
 ## Team
 
-- **Abdulaziz Thabit** - Industrial Engineer, Team Leader
-- **Abdullah Abumuall** - Product Designer
-- **Hasan Alshikh** - AI & Senior Software Engineer
-- **SAEED DRAA** - UI UX
+- **Hasan Alshikh** - Senior Software Engineer, AI Engineer
+- **Ibrahim Alnabhan** - Data Analyst & Project Specialist
+
 
 ## Acknowledgements
 
-Thanks to all contributors and MADINAH DATES organizers for the opportunity to develop this innovative solution.
+Thanks to all contributors and Roshen organizers for the opportunity to develop this innovative solution.
