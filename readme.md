@@ -1,11 +1,11 @@
 
 # Boad Project
 
-![GitHub repo size](https://img.shields.io/github/repo-size/hsndev18/boad-web)
-![GitHub contributors](https://img.shields.io/github/contributors/hsndev18/boad-web)
-![GitHub stars](https://img.shields.io/github/stars/hsndev18/boad-web?style=social)
-![GitHub forks](https://img.shields.io/github/forks/hsndev18/boad-web?style=social)
-![GitHub issues](https://img.shields.io/github/issues/hsndev18/boad-web)
+![GitHub repo size](https://img.shields.io/github/repo-size/hsndev18/boad-api)
+![GitHub contributors](https://img.shields.io/github/contributors/hsndev18/boad-api)
+![GitHub stars](https://img.shields.io/github/stars/hsndev18/boad-api?style=social)
+![GitHub forks](https://img.shields.io/github/forks/hsndev18/boad-api?style=social)
+![GitHub issues](https://img.shields.io/github/issues/hsndev18/boad-api)
 
 
 Welcome to the GitHub repository of **BOAD TEAM**, crafted for the **ROSHEN** hackathon.
@@ -90,8 +90,11 @@ Once the server is running, you can access the API endpoints from your Laravel a
 
 ## Team
 
+- **Abulrahman Alhasan** - Team Leader
 - **Hasan Alshikh** - Senior Software Engineer, AI Engineer
 - **Ibrahim Alnabhan** - Data Analyst & Project Specialist
+- **Abdallah Abumuala** - Business Developor
+- **Majid Dasuqi** - UX/UI designer
 
 
 ## Acknowledgements
