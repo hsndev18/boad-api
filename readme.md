@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ### Setting Up
 
-1. Clone the repository:
+1. Clone the repository https://github.com/hsndev18/boad-web :
     ```bash
     git clone https://github.com/hsndev18/boad-api.git
     ```
