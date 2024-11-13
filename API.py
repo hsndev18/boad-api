@@ -50,7 +50,7 @@ def analyze_home_issue():
         messages=[
             {
                 "role": "system",
-                "content": "You are an intelligent assistant specializing in diagnosing home issues and analyzing damage, such as electrical faults and water leaks. Based on the available information, you can provide accurate diagnoses and recommendations for repairs.",
+                "content": "أنت مساعد ذكي مختص بتشخيص مشكلات المنازل وتحليل الأضرار مثل أعطال الكهرباء وتسريبات المياه. يمكنك تقديم تشخيص دقيق وتوصيات للإصلاح بناءً على المعلومات المتاحة.",
             },
             {
                 "role": "user",
@@ -66,18 +66,16 @@ def analyze_home_issue():
     return jsonify({"diagnosis": diagnosis_response})
 
 
-# English version of the generate_prompt function
-
 def generate_prompt(issue_type, location=None, leak_type=None, description=None):
     # Base prompt with optional description details
-    base_prompt = "Please analyze the following home issue based on the information provided by the client:"
+    base_prompt = "يرجى تحليل الأضرار التالية في المنزل بناءً على المعلومات المقدمة من العميل:"
 
     # Detailed prompt for electricity issues
     if issue_type == "electric":
         prompt = (
-            f"{base_prompt} It appears there is an electrical problem."
-            f" {description or 'Please provide additional details about the issue.'}"
-            " Can you provide an analysis of the problem, potential causes, and recommended actions to fix this electrical issue?"
+            f"{base_prompt} يبدو أن هناك مشكلة في الكهرباء."
+            f" {description or 'يرجى تقديم مزيد من التفاصيل حول المشكلة.'}"
+            " هل يمكنك تقديم تحليل للمشكلة وأسبابها المحتملة وتحديد الإجراءات اللازمة لإصلاح الأعطال الكهربائية المحتملة؟"
         )
     
     # Detailed prompt for leak issues with location and leak type
@@ -85,33 +83,32 @@ def generate_prompt(issue_type, location=None, leak_type=None, description=None)
         prompt = f"{base_prompt} "
         if location and leak_type:
             prompt += (
-                f"A {leak_type} leak has been reported at the {location}. "
-                f"{description or 'Please provide an analysis of the leak type and potential causes.'} "
-                "Additionally, suggest appropriate steps to address this type of leak."
+                f"تم الإبلاغ عن تسريب {leak_type} في موقع {location}. "
+                f"{description or 'يرجى تقديم تحليل لنوع التسريب وأسبابه المحتملة.'} "
+                "يرجى أيضاً تقديم الخطوات المناسبة لمعالجة هذا النوع من التسريب."
             )
         elif location:
             prompt += (
-                f"A leak has been reported at the {location}. "
-                f"{description or 'Please provide an analysis of the potential damage.'} "
-                "Please clarify whether the leak is internal or external and provide an analysis and the best methods for repair."
+                f"تم الإبلاغ عن تسريب في موقع {location}. "
+                f"{description or 'يرجى تقديم تحليل للأضرار المحتملة.'} "
+                "يرجى توضيح ما إذا كان التسريب داخليًا أو خارجيًا، وتقديم تحليل وأفضل طرق المعالجة."
             )
         else:
             prompt += (
-                f"A leak has been reported, but the location is unspecified. "
-                f"{description or 'Please provide further details.'} "
-                "Please analyze the possible source and cause of the leak and recommend actions to address it."
+                f"تم الإبلاغ عن تسريب ولكن لم يتم تحديد الموقع بدقة. "
+                f"{description or 'يرجى تقديم مزيد من التفاصيل.'} "
+                "يرجى تقديم تحليل للتسريب المحتمل وأسبابه، وتحديد الإجراءات المطلوبة للتعامل معه."
             )
     
     # Generic prompt if issue type is unknown
     else:
         prompt = (
-            f"{base_prompt} The issue type has not been specified. "
-            f"{description or 'Please provide additional information to identify the problem.'} "
-            "Please provide general guidelines for checking potential electrical issues or leaks in the home."
+            f"{base_prompt} لم يتم تحديد نوع المشكلة بدقة. "
+            f"{description or 'يرجى تقديم معلومات إضافية لتحديد المشكلة.'} "
+            "يرجى تقديم إرشادات عامة للتحقق من أعطال كهربائية أو تسريبات داخل المنزل."
         )
 
     return prompt
-
 
 
 
